@@ -30,9 +30,13 @@ Aplikasi ini bersifat *client-side* dan tidak memerlukan *server* eksternal untu
         ```bash
         git clone [https://github.com/14-115-Grace/pemrograman_web_itera_123140115.git](https://github.com/14-115-Grace/pemrograman_web_itera_123140115.git)
         ```
-    * Pindah ke direktori proyek (sesuaikan jika nama folder lokal berbeda):
+    * Masuk ke direktori repositori (ini terjadi otomatis setelah clone):
         ```bash
-        cd pemrograman_web_itera_123140115 
+        cd pemrograman_web_itera_123140115
+        ```
+    * Pindah ke sub-direktori tempat *file* aplikasi berada:
+        ```bash
+        cd "Grace Exauditha Nababan_12314115_Pertemuan1" 
         ```
 2.  **Eksekusi:** Buka berkas **`index.html`** dengan mengeklik dua kali atau membukanya melalui peramban web (Google Chrome, Firefox, dll.).
 
