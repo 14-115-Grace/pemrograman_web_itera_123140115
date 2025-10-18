@@ -16,7 +16,7 @@ Berikut adalah beberapa tangkapan layar untuk mengilustrasikan fungsi dan antarm
 
 | Tampilan Awal (Kosong) | Tampilan Tugas dengan Prioritas | Filter Status Dibuka |
 | :---: | :---: | :---: |
-| ![Tampilan Awal](/Screenshot/tampilanAwal.png) | ![Tampilan Tugas Prioritas](/Screenshot/TampilanTugasPrioritas.png) | ![Filter Status](/Screenshot/FIlterStatus.png) |
+| ![Tampilan Awal](Screenshot/tampilanAwal.png) | ![Tampilan Tugas Prioritas](Screenshot/TampilanTugasPrioritas.png) | ![Filter Status](Screenshot/FIlterStatus.png) |
 
 ---
 
