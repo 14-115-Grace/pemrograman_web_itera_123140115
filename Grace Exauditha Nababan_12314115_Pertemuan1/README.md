@@ -16,7 +16,7 @@ Berikut adalah beberapa tangkapan layar untuk mengilustrasikan fungsi dan antarm
 
 | Tampilan Awal (Kosong) | Tampilan Tugas dengan Prioritas | Filter Status Dibuka |
 | :---: | :---: | :---: |
-| ![Tampilan Awal](tampilanAwal.png) | ![Tampilan Tugas Prioritas](TampilanTugasPrioritas.png) | ![Filter Status](FIlterStatus.png) |
+| ![Tampilan Awal](\Screenshot\tampilanAwal.png) | ![Tampilan Tugas Prioritas](\Screenshot\TampilanTugasPrioritas.png) | ![Filter Status](\Screenshot\FIlterStatus.png) |
 
 *(Catatan: Pastikan berkas gambar berada dalam direktori yang sama dengan `README.md` ini untuk tampilan yang optimal.)*
 
