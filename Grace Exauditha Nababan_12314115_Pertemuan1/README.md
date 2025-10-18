@@ -28,7 +28,7 @@ Aplikasi ini bersifat *client-side* dan tidak memerlukan *server* eksternal untu
     * Buka **Terminal** atau **Command Prompt** (CMD).
     * Kloning proyek dari repositori GitHub berikut:
         ```bash
-        git clone [https://github.com/14-115-Grace/pemrograman_web_itera_123140115.git](https://github.com/14-115-Grace/pemrograman_web_itera_123140115.git)
+        git clone https://github.com/14-115-Grace/pemrograman_web_itera_123140115.git
         ```
     * Masuk ke direktori repositori (ini terjadi otomatis setelah clone):
         ```bash
