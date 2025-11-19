@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import { Book, BarChart2, Home, Menu, X } from 'lucide-react';
+import { Routes, Route, NavLink, useLocation } from 'react-router-dom'; 
 import { BookProvider } from './context/BookContext';
 import HomePage from './pages/HomePage';
 import StatsPage from './pages/StatsPage';
 import './App.css'; 
 
 const App = () => {
-  const [currentView, setCurrentView] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); 
 
-  const navigateTo = (view) => {
-    setCurrentView(view);
-    setIsMenuOpen(false); 
+  const getHeaderInfo = () => {
+    if (location.pathname === '/stats') {
+      return { title: 'Insight', subtitle: 'Data di balik kebiasaan membacamu.' };
+    }
+    return { title: 'Daftar Pustaka', subtitle: 'Kelola bacaanmu dengan gaya.' };
   };
+
+  const { title, subtitle } = getHeaderInfo();
 
   return (
     <BookProvider>
@@ -30,20 +35,21 @@ const App = () => {
               </h1>
             </div>
 
-            {/* 2. Desktop Menu */}
+            {/* 2. Desktop Menu (Ganti button jadi NavLink) */}
             <div className="desktop-menu" style={{ gap: '2rem' }}>
-              <button 
-                onClick={() => navigateTo('home')} 
-                className={`nav-btn ${currentView === 'home' ? 'active' : ''}`}
+              <NavLink 
+                to="/" 
+                className={({ isActive }) => `nav-btn ${isActive ? 'active' : ''}`}
+                end 
               >
                 Koleksi Saya
-              </button>
-              <button 
-                onClick={() => navigateTo('stats')} 
-                className={`nav-btn ${currentView === 'stats' ? 'active' : ''}`}
+              </NavLink>
+              <NavLink 
+                to="/stats" 
+                className={({ isActive }) => `nav-btn ${isActive ? 'active' : ''}`}
               >
                 Statistik
-              </button>
+              </NavLink>
             </div>
 
             {/* 3. Mobile Hamburger Button */}
@@ -59,19 +65,22 @@ const App = () => {
           {isMenuOpen && (
             <div className="mobile-dropdown">
                <div className="mobile-menu-container">
-                 <button 
-                   onClick={() => navigateTo('home')} 
-                   className={`mobile-menu-item ${currentView === 'home' ? 'active' : ''}`}
+                 <NavLink 
+                   to="/" 
+                   className={({ isActive }) => `mobile-menu-item ${isActive ? 'active' : ''}`}
+                   onClick={() => setIsMenuOpen(false)}
+                   end
                  >
                    <Home size={20} /> Koleksi Saya
-                 </button>
+                 </NavLink>
                  
-                 <button 
-                   onClick={() => navigateTo('stats')} 
-                   className={`mobile-menu-item ${currentView === 'stats' ? 'active' : ''}`}
+                 <NavLink 
+                   to="/stats" 
+                   className={({ isActive }) => `mobile-menu-item ${isActive ? 'active' : ''}`}
+                   onClick={() => setIsMenuOpen(false)}
                  >
                    <BarChart2 size={20} /> Statistik
-                 </button>
+                 </NavLink>
                </div>
             </div>
           )}
@@ -80,16 +89,14 @@ const App = () => {
         {/* === MAIN CONTENT === */}
         <main className="main-content">
            <header className="page-header">
-              <h2 className="page-title font-heading">
-                {currentView === 'home' ? 'Daftar Pustaka' : 'Insight'}
-              </h2>
-              <p className="page-subtitle">
-                {currentView === 'home' ? 'Kelola bacaanmu dengan gaya.' : 'Data di balik kebiasaan membacamu.'}
-              </p>
+              <h2 className="page-title font-heading">{title}</h2>
+              <p className="page-subtitle">{subtitle}</p>
             </header>
             
-            {/* Render Halaman Sesuai State */}
-            {currentView === 'home' ? <HomePage /> : <StatsPage />}
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/stats" element={<StatsPage />} />
+            </Routes>
         </main>
 
       </div>
