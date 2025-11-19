@@ -57,6 +57,8 @@
   padding-bottom: 4px;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
+  text-decoration: none; 
+  display: inline-block;
 }
 
 .nav-btn:hover {
@@ -100,6 +102,8 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.2s;
+  text-decoration: none; 
+  box-sizing: border-box; 
 }
 
 .mobile-menu-item:hover {
