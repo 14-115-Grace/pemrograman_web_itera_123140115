@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# LibManager - Personal Library Management App 📚
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**LibManager** adalah aplikasi web berbasis React untuk mengelola koleksi buku pribadi. Aplikasi ini memungkinkan pengguna untuk mencatat buku, memantau status bacaan, dan melihat statistik literasi mereka dengan antarmuka yang modern dan responsif.
 
-## Available Scripts
+Dibuat untuk memenuhi Tugas Pemrograman Web Lanjut (ITERA).
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 📋 Deskripsi Aplikasi
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+LibManager dirancang untuk membantu pencinta buku melacak bacaan mereka. Data disimpan secara persisten menggunakan Browser LocalStorage, sehingga data tidak hilang saat browser ditutup.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Fitur Utama:**
+* **Manajemen Koleksi:** Tambah, Edit, dan Hapus buku.
+* **Status Tracking:** Kategorikan buku (Belum Dibaca, Sedang Dibaca, Selesai).
+* **Pencarian & Filter:** Cari buku berdasarkan judul/penulis dan filter berdasarkan status.
+* **Statistik (Insight):** Visualisasi data kebiasaan membaca.
+* **Responsive Design:** Tampilan optimal di Desktop dan Mobile.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Instruksi Instalasi & Menjalankan
 
-### `npm run build`
+Pastikan Node.js sudah terinstall di komputer kamu.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  **Clone Repository**
+    ```bash
+    git clone [https://github.com/genhaa/pemrograman_web_itera_123140115.git](https://github.com/genhaa/pemrograman_web_itera_123140115.git)
+    cd pemrograman_web_itera_123140115
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2.  **Install Dependencies**
+    ```bash
+    npm install
+    ```
+    *Ini akan menginstall `react`, `react-router-dom`, `lucide-react`, dan library testing.*
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3.  **Jalankan Aplikasi**
+    ```bash
+    npm start
+    ```
+    Buka [http://localhost:3000](http://localhost:3001) di browser.
 
-### `npm run eject`
+4.  **Jalankan Testing**
+    ```bash
+    npm test
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📸 Screenshot Antarmuka
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Berikut adalah tampilan antarmuka aplikasi:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Halaman | Screenshot |
+| :--- | :--- |
+| **Tampilan Awal** | ![Home](screenshot/tampilan_awal.png) |
+| **Form Tambah Buku** | ![Add Form](screenshot/form_tambah_buku.png) |
+| **Form Edit Buku** | ![Edit Form](screenshot/form_edit_buku.png) |
+| **Pencarian** | ![Search](screenshot/cari.png) |
+| **Filter (Selesai)** | ![Filter](screenshot/filter_selesai.png) |
+| **Halaman Statistik** | ![Stats](screenshot/statistik.png) |
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ⚛️ Penjelasan Fitur React
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Aplikasi ini dibangun menggunakan konsep modern React:
 
-### Code Splitting
+1.  **State Management (Context API & `useContext`)**
+    * Menggunakan `BookProvider` (di `src/context/BookContext.js`) untuk membungkus seluruh aplikasi. Hal ini memungkinkan state daftar buku (`books`) dapat diakses dan dimanipulasi dari komponen manapun tanpa "prop drilling".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2.  **Routing (`react-router-dom`)**
+    * Menggunakan `Routes`, `Route`, dan `NavLink` untuk navigasi Single Page Application (SPA) antara halaman "Koleksi Saya" dan "Statistik" tanpa reload halaman.
 
-### Analyzing the Bundle Size
+3.  **React Hooks**
+    * `useState`: Mengelola state lokal UI (seperti `isMenuOpen` untuk hamburger menu dan input form).
+    * `useEffect`: Menangani *side effects*, seperti sinkronisasi data ke `localStorage`.
+    * `useLocation`: Digunakan di `App.js` untuk mendeteksi URL aktif dan mengubah judul Header secara dinamis.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4.  **Custom Hooks**
+    * `useLocalStorage`: Hook kustom untuk mengenkapsulasi logika penyimpanan data browser.
+    * `useBookStats`: Hook kustom untuk menghitung logika statistik (jumlah buku selesai, total halaman, dll) agar komponen UI tetap bersih.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
