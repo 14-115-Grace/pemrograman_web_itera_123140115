@@ -1,38 +1,45 @@
+# 📚 Sistem Manajemen Perpustakaan (Python OOP)
 
-# 📚 Library Management System (OOP Implementation)
+Proyek ini adalah implementasi sistem manajemen perpustakaan berbasis CLI (Command Line Interface) yang dibangun untuk memenuhi tugas mata kuliah Pemrograman. Kode ini mendemonstrasikan penerapan pilar utama **Object-Oriented Programming (OOP)**.
 
-A simple yet robust command-line interface (CLI) application for managing a library system. This project was built to demonstrate the practical application of Object-Oriented Programming (OOP) principles in Python.
+## 🌟 Fitur Utama
 
-## 🚀 Features
+1.  **Tambah Data**: Input buku dan majalah dengan validasi data.
+2.  **Lihat Koleksi**: Menampilkan seluruh item dalam format tabel yang rapi.
+3.  **Pencarian**: Fitur pencarian item berdasarkan judul atau ID.
+4.  **Struktur OOP**: Menggunakan Abstract Class, Inheritance, dan Polymorphism.
 
-* **Add Items:** Register new Books and Magazines with specific attributes.
-* **Search System:** Find items by Title or unique ID (case-insensitive).
-* **View Collection:** Display a formatted list of all items in the library.
-* **Data Validation:** Prevents adding items with duplicate IDs.
-* **Interactive CLI:** User-friendly loop menu for continuous operation.
+## 📸 Dokumentasi Program
 
-## 🧠 OOP Concepts Applied
+Berikut adalah hasil tangkapan layar (screenshot) dari fitur utama program:
 
-This project strictly follows the 4 pillars of OOP:
+### 1. Menambahkan Item Baru
+Proses input data buku dan majalah ke dalam sistem.
+![Fitur Tambah Data](tambah.png)
 
-1.  **Abstraction (`ABC`)**:
-    * Used `LibraryItem` as an abstract base class.
-    * Enforces a contract where all subclasses must implement `get_details()`.
+### 2. Menampilkan Seluruh Koleksi
+Output polymorphic yang membedakan detail antara Buku dan Majalah.
+![Fitur Tampilkan Data](tampil.png)
 
-2.  **Inheritance**:
-    * `Book` and `Magazine` classes inherit common attributes (ID, Title) from `LibraryItem`, reducing code redundancy (DRY Principle).
+### 3. Pencarian Item
+Mencari data spesifik menggunakan kata kunci.
+![Fitur Pencarian](Cari.png)
 
-3.  **Encapsulation**:
-    * Protected attributes (`_item_id`, `_title`) are used to signal internal use.
-    * Private attributes (`__collection`) in the `Library` class prevent direct external modification.
-    * **Property Decorators** are used for safe attribute access (Getters).
+## 🛠️ Konsep OOP yang Diterapkan
 
-4.  **Polymorphism**:
-    * The `get_details()` method behaves differently depending on whether the object is a `Book` or a `Magazine`, allowing the main loop to treat all items uniformly.
+| Konsep | Implementasi di Kode |
+| :--- | :--- |
+| **Abstraction** | Class `LibraryItem` (ABC) sebagai blueprint dasar. |
+| **Inheritance** | `Book` dan `Magazine` adalah turunan dari `LibraryItem`. |
+| **Polymorphism**| Method `get_details()` memiliki output berbeda di tiap class. |
+| **Encapsulation**| Penggunaan properti private `__collection` dan protected `_title`. |
 
-## 🛠️ Technology Stack
+## 🚀 Cara Menjalankan Program
 
-* **Language:** Python 3.x
-* **Paradigm:** Object-Oriented Programming
+1.  Pastikan Python 3 sudah terinstall.
+2.  Pastikan file gambar (`tambah.png`, `tampil.png`, `Cari.png`) berada di folder yang sama dengan script.
+3.  Jalankan perintah berikut di terminal:
 
-## 📂 Project Structure
+```bash
+# Ganti nama file sesuai file python kamu
+python "123140115_Sistem Manajemen Perpustakaan Sederhana.py"
