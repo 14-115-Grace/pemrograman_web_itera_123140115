@@ -34,12 +34,3 @@ Mencari data spesifik menggunakan kata kunci.
 | **Polymorphism**| Method `get_details()` memiliki output berbeda di tiap class. |
 | **Encapsulation**| Penggunaan properti private `__collection` dan protected `_title`. |
 
-## 🚀 Cara Menjalankan Program
-
-1.  Pastikan Python 3 sudah terinstall.
-2.  Pastikan file gambar (`tambah.png`, `tampil.png`, `Cari.png`) berada di folder yang sama dengan script.
-3.  Jalankan perintah berikut di terminal:
-
-```bash
-# Ganti nama file sesuai file python kamu
-python "123140115_Sistem Manajemen Perpustakaan Sederhana.py"
